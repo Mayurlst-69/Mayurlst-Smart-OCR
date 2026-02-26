@@ -3,12 +3,14 @@
 A modern, high-performance web application for extracting text from images and converting PDF documents into various formats (Word, Excel).
 
 > 🌐 **Live Demo:** [Try Mayurlst OCR Here!](https://mayurlst-smart-ocr-mwibjbcv7uqfnbnztzbmmv.streamlit.app)
-
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit)
 ![EasyOCR](https://img.shields.io/badge/EasyOCR-AI_Powered-orange.svg)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![App Demo]<p align="center">
+  <img src="assets/Web_page_preview.png" width="800">
+</p>
 
 ## 💻 Tech Stack Overview
 

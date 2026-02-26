@@ -37,7 +37,7 @@ with st.sidebar:
 col1, col_center, col3 = st.columns([1.5, 3, 1.5])
 
 with col_center:
-    # เลือกฟังก์ชัน การทำงาน(Radio จะถูก CSS ปรับให้หน้าตาคล้าย Tabs แนวนอน)
+    # select mode function
     mode = st.radio(
         "โหมดการทำงาน",
         ("🔍 Smart OCR", "📄 PDF To Word", "📊 PDF To Excel", "🖼️ Picture To Word"),
@@ -60,7 +60,7 @@ if uploaded_file is not None:
                 files = {"file": (uploaded_file.name, uploaded_file.getvalue(), uploaded_file.type)}
                 
                 try:
-                    # โหมด OCR
+                    # OCR
                     if "Smart OCR" in mode:
                         response = requests.post(f"{BASE_URL}/extract", files=files)
                         if response.status_code == 200:
@@ -69,7 +69,7 @@ if uploaded_file is not None:
                         else:
                             st.error(f"Error: {response.json().get('detail')}")
                             
-                    # โหมด PDF to Word
+                    # PDF to Word
                     elif "PDF To Word" in mode:
                         response = requests.post(f"{BASE_URL}/convert/pdf-to-word", files=files)
                         if response.status_code == 200:
@@ -78,7 +78,7 @@ if uploaded_file is not None:
                         else:
                             st.error(f"Error: {response.json().get('detail')}")
                             
-                    # โหมด PDF to Excel
+                    # PDF to Excel
                     elif "PDF To Excel" in mode:
                         response = requests.post(f"{BASE_URL}/convert/pdf-to-excel", files=files)
                         if response.status_code == 200:
@@ -87,7 +87,7 @@ if uploaded_file is not None:
                         else:
                             st.warning("No tables found in this PDF.")
                             
-                    # โหมด Picture to Word
+                    # Picture to Word
                     elif "Picture To Word" in mode:
                         response = requests.post(f"{BASE_URL}/convert/image-to-word", files=files)
                         if response.status_code == 200:
