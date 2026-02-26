@@ -11,10 +11,12 @@ st.set_page_config(page_title="Mayurlst OCR", page_icon="⚡", layout="wide")
 
 # --- function for upload CSS ---
 def local_css(file_name):
-    with open(file_name, encoding="utf-8") as f:
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, file_name)
+    
+    with open(file_path, encoding="utf-8") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# Load style.css 
 local_css("style.css")
 
 st.markdown("<h1 class='hero-title'>Mayurlst OCR</h1>", unsafe_allow_html=True)
